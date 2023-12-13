@@ -1,0 +1,210 @@
+@import "@/app/variables.scss";
+.title {
+  font-size: 26vw;
+  margin: 0;
+
+  @media screen and (min-width: $max-width) {
+    font-size: 30rem;
+  }
+}
+
+.spiders {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: calc($max-width - 700px);
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  list-style: none;
+
+  @media screen and (min-width: $max-width) {
+    max-width: calc($max-width - 400px);
+    top: 50%;
+  }
+
+  @media screen and (max-width: 450px) {
+    justify-content: center;
+    width: 75%;
+    gap: 0.5rem;
+    margin-left: -30px;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+
+    @media screen and (max-width: 450px) {
+      width: 100%;
+      filter: blur(1px);
+    }
+  }
+
+  &.spider-man-616 {
+    height: $spider-man-616-height;
+  }
+  &.mulher-aranha-65 {
+    height: $mulher-aranha-65-height;
+  }
+  &.spider-man-1610 {
+    height: $spider-man-1610-height;
+  }
+  &.spider-ham-8311 {
+    height: $spider-ham-8311-height;
+  }
+  &.spider-man-90214 {
+    height: $spider-man-90214-height;
+  }
+  &.spider-man-928 {
+    height: $spider-man-928-height;
+  }
+  &.sp-dr-14512 {
+    height: $sp-dr-14512-height;
+  }
+}
+
+.ativo {
+  @media screen and (max-width: 380px) {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    object-fit: contain;
+    align-self: center;
+    justify-self: center;
+    z-index: 1;
+
+    .arrows {
+      width: 13px;
+      display: inline;
+      position: relative;
+      top: -50%;
+    }
+
+    img {
+      height: 450px;
+      align-self: center;
+      justify-self: center;
+      justify-content: center;
+      object-fit: contain;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    margin-top: 5rem;
+  }
+}
+
+.ativo {
+  @media screen and (max-width: 450px) {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    object-fit: contain;
+    align-self: center;
+    justify-self: center;
+    z-index: 1;
+
+    .arrows {
+      width: 13px;
+      display: inline;
+      position: relative;
+      top: -50%;
+    }
+
+    img {
+      height: 530px;
+      align-self: center;
+      justify-self: center;
+      justify-content: center;
+      object-fit: contain;
+      filter: blur(0);
+    }
+  }
+  @media screen and (max-width: 450px) {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    object-fit: contain;
+    align-self: center;
+    justify-self: center;
+    z-index: 1;
+
+    .arrows {
+      width: 13px;
+      display: inline;
+      position: relative;
+      top: -50%;
+    }
+
+    img {
+      height: 450px;
+      align-self: center;
+      justify-self: center;
+      justify-content: center;
+      object-fit: contain;
+    }
+  }
+}
+.arrows {
+  width: 13px;
+  display: none;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 50px;
+  gap: 4px;
+  visibility: hidden;
+
+  @media screen and (max-width: 450px) {
+    visibility: visible;
+  }
+}
+
+.circle {
+  width: 9px;
+  height: 9px;
+  border-radius: 9px;
+  border: 0.8px solid #fff;
+  padding: 1px;
+  align-items: center;
+  justify-content: center;
+
+  div.active {
+    display: block;
+  }
+}
+
+.active {
+  width: 80%;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 9px;
+  border: 0.4px solid #0069e3;
+  display: none;
+}
