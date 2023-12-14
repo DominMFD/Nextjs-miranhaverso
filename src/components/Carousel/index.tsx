@@ -21,6 +21,8 @@ enum enPosition {
   BACK = 2,
 }
 
+let width = window.screen.width;
+
 export default function Carousel({ spiders, activeId }: IProps) {
   const [visibleItems, setVisibleItems] = useState<ISpiderData[] | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(
@@ -142,7 +144,12 @@ export default function Carousel({ spiders, activeId }: IProps) {
                 className={styles.spider}
                 transition={{ duration: 0.8 }}
                 initial={{ x: -1500, scale: 0.75 }}
-                animate={{ x: 0, ...getItemstyles(index) }}
+                animate={{
+                  x: 0,
+                  ...(width <= 480
+                    ? getItemstylesMobile(index)
+                    : getItemstyles(index)),
+                }}
                 exit={{ x: 0, opacity: 0, scale: 1, left: "-20%" }}
               >
                 <SpiderPicture spider={item} />
@@ -187,6 +194,32 @@ const getItemstyles = (position: enPosition) => {
     left: "160px",
     top: "-20%",
     scale: 0.6,
+    opacity: 0.8,
+  };
+};
+
+const getItemstylesMobile = (position: enPosition) => {
+  if (position === enPosition.FRONT) {
+    return {
+      zIndex: 3,
+      filter: "blur(5px)",
+      scale: 2.2,
+      left: "-30px",
+    };
+  }
+
+  if (position === enPosition.MAIN) {
+    return {
+      zIndex: 2,
+      scale: 1.8,
+    };
+  }
+
+  return {
+    zIndex: 1,
+    filter: "blur(2px)",
+    scale: 1.5,
+    left: "20px",
     opacity: 0.8,
   };
 };

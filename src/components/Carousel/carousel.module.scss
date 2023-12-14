@@ -1,5 +1,13 @@
 .container {
   display: flex;
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 .carousel {
@@ -17,12 +25,30 @@
   &:active {
     cursor: grabbing;
   }
+
+  @media screen and (max-width: 480px) {
+    height: 300px;
+    width: 100%;
+    display: flex;
+  }
 }
 
 .details {
   flex: 1;
   position: relative;
   margin-top: 3rem;
+  z-index: 3;
+
+  @media screen and (max-width: 480px) {
+    margin-top: 20rem;
+
+    &::before {
+      content: "";
+      background-color: white;
+      width: 200px;
+      height: 200px;
+    }
+  }
 }
 
 .spider {
@@ -36,5 +62,13 @@
     object-fit: contain;
     object-position: center right;
     width: 100%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    position: relative;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
   }
 }
